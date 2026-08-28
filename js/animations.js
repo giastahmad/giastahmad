@@ -10,43 +10,6 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* -----------------------------------------------------------------------
-     ASCII portrait: inject + responsive scale
-     ----------------------------------------------------------------------- */
-  const asciiEl = document.getElementById('asciiPortrait');
-  const asciiWrap = asciiEl ? asciiEl.closest('.terminal-card__body') : null;
-
-  function fitAsciiPortrait() {
-    if (!asciiEl || !asciiWrap) return;
-    // Reset transform to measure natural size at base font-size.
-    asciiEl.style.transform = 'scale(1)';
-    const wrapWidth = asciiWrap.clientWidth;
-    const naturalWidth = asciiEl.scrollWidth;
-    const naturalHeight = asciiEl.scrollHeight;
-    if (!naturalWidth) return;
-
-    const scale = Math.min(1.6, wrapWidth / naturalWidth);
-    asciiEl.style.transform = `scale(${scale})`;
-    // Collapse the wrapper's reserved space to the scaled size so no
-    // extra whitespace (or clipping) appears below/right of the art.
-    asciiWrap.style.height = `${naturalHeight * scale}px`;
-  }
-
-  if (asciiEl) {
-    asciiEl.textContent = typeof ASCII_PORTRAIT !== 'undefined' ? ASCII_PORTRAIT : '';
-    fitAsciiPortrait();
-
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(fitAsciiPortrait, 120);
-    });
-    // Fonts loading late can change measured widths — refit once ready.
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(fitAsciiPortrait);
-    }
-  }
-
-  /* -----------------------------------------------------------------------
      GSAP setup
      ----------------------------------------------------------------------- */
   if (typeof gsap === 'undefined') return;
@@ -65,17 +28,11 @@
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
   tl.set('.hero__text-col [data-animate="text"]', { opacity: 0, y: 22 })
-    .set('.terminal-card', { opacity: 0, y: 16 })
     .set('#navbar', { opacity: 0, y: -14 })
+    .set('.hero__ascii-layer', { opacity: 0 })
 
     .to('#navbar', { opacity: 1, y: 0, duration: 0.6 }, 0.05)
-    .to('.terminal-card', { opacity: 1, y: 0, duration: 0.7 }, 0.15)
-    .fromTo(
-      '.terminal-card__body',
-      { clipPath: 'inset(0 100% 0 0)' },
-      { clipPath: 'inset(0 0% 0 0)', duration: 0.9, ease: 'power4.inOut' },
-      0.25
-    )
+    .to('.hero__ascii-layer', { opacity: 1, duration: 0.8 }, 0.18)
     .to(
       '.hero__text-col [data-animate="text"]',
       { opacity: 1, y: 0, duration: 0.7, stagger: 0.09 },

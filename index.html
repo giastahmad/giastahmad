@@ -1,171 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giast Ahmad — Portfolio</title>
-<meta name="description" content="Giast Ahmad — data, systems, and machine learning. One dataset. One model. One system at a time.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giast Ahmad — Portfolio</title>
+    <meta
+      name="description"
+      content="Giast Ahmad — data, systems, and machine learning. One dataset. One model. One system at a time."
+    />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-<a class="skip-link" href="#main">Skip to content</a>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar" id="navbar" data-animate="navbar">
+      <a class="navbar__mark" href="#home" aria-label="Giast Ahmad — home">
+        <span class="navbar__mark-glyph" aria-hidden="true">&gt;_</span>
+        <span class="navbar__mark-text"
+          >giast<span class="dim">.</span>ahmad</span
+        >
+      </a>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar" id="navbar" data-animate="navbar">
-  <a class="navbar__mark" href="#home" aria-label="Giast Ahmad — home">
-    <span class="navbar__mark-glyph" aria-hidden="true">&gt;_</span>
-    <span class="navbar__mark-text">giast<span class="dim">.</span>ahmad</span>
-  </a>
+      <nav class="navbar__nav" aria-label="Primary">
+        <ul class="navbar__list">
+          <li>
+            <a href="#home" class="navbar__link" data-nav data-section="home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="navbar__link" data-nav data-section="about"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#journey"
+              class="navbar__link"
+              data-nav
+              data-section="journey"
+              >Journey</a
+            >
+          </li>
+          <li>
+            <a
+              href="#project"
+              class="navbar__link"
+              data-nav
+              data-section="project"
+              >Project</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="navbar__link"
+              data-nav
+              data-section="contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-  <nav class="navbar__nav" aria-label="Primary">
-    <ul class="navbar__list">
-      <li><a href="#home"    class="navbar__link" data-nav data-section="home">Home</a></li>
-      <li><a href="#about"   class="navbar__link" data-nav data-section="about">About</a></li>
-      <li><a href="#journey" class="navbar__link" data-nav data-section="journey">Journey</a></li>
-      <li><a href="#project" class="navbar__link" data-nav data-section="project">Project</a></li>
-      <li><a href="#contact" class="navbar__link" data-nav data-section="contact">Contact</a></li>
-    </ul>
-  </nav>
+      <button
+        class="navbar__toggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
 
-  <button class="navbar__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
+    <!-- Mobile menu -->
+    <nav
+      class="mobile-menu"
+      id="mobileMenu"
+      aria-label="Mobile"
+      data-open="false"
+    >
+      <ul class="mobile-menu__list">
+        <li>
+          <a href="#home" class="mobile-menu__link" data-nav data-section="home"
+            ><span class="mobile-menu__index">01</span>Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="mobile-menu__link"
+            data-nav
+            data-section="about"
+            ><span class="mobile-menu__index">02</span>About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#journey"
+            class="mobile-menu__link"
+            data-nav
+            data-section="journey"
+            ><span class="mobile-menu__index">03</span>Journey</a
+          >
+        </li>
+        <li>
+          <a
+            href="#project"
+            class="mobile-menu__link"
+            data-nav
+            data-section="project"
+            ><span class="mobile-menu__index">04</span>Project</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="mobile-menu__link"
+            data-nav
+            data-section="contact"
+            ><span class="mobile-menu__index">05</span>Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-<!-- Mobile menu -->
-<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" data-open="false">
-  <ul class="mobile-menu__list">
-    <li><a href="#home"    class="mobile-menu__link" data-nav data-section="home"><span class="mobile-menu__index">01</span>Home</a></li>
-    <li><a href="#about"   class="mobile-menu__link" data-nav data-section="about"><span class="mobile-menu__index">02</span>About</a></li>
-    <li><a href="#journey" class="mobile-menu__link" data-nav data-section="journey"><span class="mobile-menu__index">03</span>Journey</a></li>
-    <li><a href="#project" class="mobile-menu__link" data-nav data-section="project"><span class="mobile-menu__index">04</span>Project</a></li>
-    <li><a href="#contact" class="mobile-menu__link" data-nav data-section="contact"><span class="mobile-menu__index">05</span>Contact</a></li>
-  </ul>
-</nav>
+    <!-- Fixed side rail (desktop only, decorative + meta info) -->
+    <aside class="rail rail--left" aria-hidden="true">
+      <span class="rail__text">PORTFOLIO&nbsp;/&nbsp;2026</span>
+    </aside>
+    <aside class="rail rail--right" aria-hidden="true">
+      <span class="rail__dot"></span>
+      <span class="rail__text">STATUS: ONLINE — JAKARTA, ID</span>
+    </aside>
 
-<!-- Fixed side rail (desktop only, decorative + meta info) -->
-<aside class="rail rail--left" aria-hidden="true">
-  <span class="rail__text">PORTFOLIO&nbsp;/&nbsp;2026</span>
-</aside>
-<aside class="rail rail--right" aria-hidden="true">
-  <span class="rail__dot"></span>
-  <span class="rail__text">STATUS: ONLINE — JAKARTA, ID</span>
-</aside>
-
-<main id="main">
-
-  <!-- ================= HOME / HERO ================= -->
-  <section id="home" class="section hero">
-    <div class="hero__grid">
-
-      <div class="hero__text-col">
-        <p class="eyebrow" data-animate="text">SECTION 01 / 05 — HOME</p>
-
-        <h1 class="hero__name" data-animate="text">
-          <span class="hero__name-line">Giast</span>
-          <span class="hero__name-line">Ahmad</span>
-        </h1>
-
-        <p class="hero__caption" data-animate="text">Chasing the signal behind the noise.</p>
-
-        <p class="hero__subcaption" data-animate="text">One dataset. One model. One system at a time.</p>
-
-        <div class="hero__tags" data-animate="text">
-          <span class="tag">DATA</span>
-          <span class="tag">SYSTEMS</span>
-          <span class="tag">ENGINEERING</span>
-          <span class="tag">ML</span>
+    <main id="main">
+      <!-- ================= HOME / HERO ================= -->
+      <section id="home" class="section hero">
+        <div class="hero__ascii-layer" aria-hidden="true">
+          <pre class="ascii-portrait" id="asciiPortrait"></pre>
         </div>
 
-        <a href="#about" class="hero__scroll" data-nav data-section="about">
-          <span class="hero__scroll-line"></span>
-          <span>Scroll</span>
-        </a>
-      </div>
+        <div class="hero__grid">
+          <div class="hero__text-col">
+            <p class="eyebrow" data-animate="text">SECTION 01 / 05 — HOME</p>
+            <h1 class="hero__name" data-animate="text">
+              <span class="hero__name-line">Giast</span>
+              <span class="hero__name-line">Ahmad</span>
+            </h1>
 
-      <!-- ASCII portrait sits plainly in the right column now — no card, no frame, full opacity -->
-      <div class="hero__portrait-col">
-        <pre class="ascii-portrait" id="asciiPortrait" role="img" aria-label="ASCII art portrait of Giast Ahmad"></pre>
-      </div>
+            <p class="hero__caption" data-animate="text">
+              Chasing the signal behind the noise.
+            </p>
 
-    </div>
-  </section>
+            <p class="hero__subcaption" data-animate="text">
+              One dataset. One model. One system at a time.
+            </p>
 
-  <!-- ================= ABOUT ================= -->
-  <section id="about" class="section placeholder-section" data-animate="section">
-    <div class="placeholder-section__inner">
-      <p class="eyebrow">SECTION 02 / 05 — ABOUT</p>
-      <h2 class="placeholder-section__title">About</h2>
-      <div class="placeholder-section__rule" aria-hidden="true"></div>
-      <p class="placeholder-section__note">Profile and introduction — in progress.</p>
-    </div>
-  </section>
+            <div class="hero__tags" data-animate="text">
+              <span class="tag">DATA</span>
+              <span class="tag">SYSTEMS</span>
+              <span class="tag">ENGINEERING</span>
+              <span class="tag">ML</span>
+            </div>
 
-  <!-- ================= JOURNEY ================= -->
-  <section id="journey" class="section placeholder-section" data-animate="section">
-    <div class="placeholder-section__inner">
-      <p class="eyebrow">SECTION 03 / 05 — JOURNEY</p>
-      <h2 class="placeholder-section__title">Journey</h2>
-      <div class="placeholder-section__rule" aria-hidden="true"></div>
-      <p class="placeholder-section__note">Education &amp; experience timeline — in progress.</p>
-    </div>
-  </section>
-
-  <!-- ================= PROJECT ================= -->
-  <section id="project" class="section placeholder-section" data-animate="section">
-    <div class="placeholder-section__inner">
-      <p class="eyebrow">SECTION 04 / 05 — PROJECT</p>
-      <h2 class="placeholder-section__title">Project</h2>
-      <div class="placeholder-section__rule" aria-hidden="true"></div>
-      <p class="placeholder-section__note">Selected work — in progress.</p>
-    </div>
-
-    <!-- Reusable project-detail modal shell (hidden until wired to real data) -->
-    <div class="project-modal" id="projectModal" data-open="false" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle" hidden>
-      <div class="project-modal__backdrop" data-close-modal></div>
-      <div class="project-modal__panel" role="document">
-        <button class="project-modal__close" data-close-modal aria-label="Close project details">×</button>
-        <div class="project-modal__image" id="projectModalImage" aria-hidden="true"></div>
-        <div class="project-modal__body">
-          <p class="eyebrow" id="projectModalEyebrow"></p>
-          <h3 class="project-modal__title" id="projectModalTitle"></h3>
-          <p class="project-modal__overview" id="projectModalOverview"></p>
-          <ul class="project-modal__stack" id="projectModalStack"></ul>
-          <p class="project-modal__description" id="projectModalDescription"></p>
-          <div class="project-modal__links" id="projectModalLinks"></div>
+            <a href="#about" class="hero__scroll" data-nav data-section="about">
+              <span class="hero__scroll-line"></span>
+              <span>Scroll</span>
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ================= CONTACT ================= -->
-  <section id="contact" class="section placeholder-section placeholder-section--last" data-animate="section">
-    <div class="placeholder-section__inner">
-      <p class="eyebrow">SECTION 05 / 05 — CONTACT</p>
-      <h2 class="placeholder-section__title">Contact</h2>
-      <div class="placeholder-section__rule" aria-hidden="true"></div>
-      <p class="placeholder-section__note">Contact details &amp; social links — in progress.</p>
-    </div>
-  </section>
+      <!-- ================= ABOUT ================= -->
+      <section
+        id="about"
+        class="section placeholder-section"
+        data-animate="section"
+      >
+        <div class="placeholder-section__inner">
+          <p class="eyebrow">SECTION 02 / 05 — ABOUT</p>
+          <h2 class="placeholder-section__title">About</h2>
+          <div class="placeholder-section__rule" aria-hidden="true"></div>
+          <p class="placeholder-section__note">
+            Profile and introduction — in progress.
+          </p>
+        </div>
+      </section>
 
-</main>
+      <!-- ================= JOURNEY ================= -->
+      <section
+        id="journey"
+        class="section placeholder-section"
+        data-animate="section"
+      >
+        <div class="placeholder-section__inner">
+          <p class="eyebrow">SECTION 03 / 05 — JOURNEY</p>
+          <h2 class="placeholder-section__title">Journey</h2>
+          <div class="placeholder-section__rule" aria-hidden="true"></div>
+          <p class="placeholder-section__note">
+            Education &amp; experience timeline — in progress.
+          </p>
+        </div>
+      </section>
 
-<footer class="footer">
-  <span>© 2026 Giast Ahmad</span>
-  <span class="footer__dim">Built with HTML, CSS, GSAP.</span>
-</footer>
+      <!-- ================= PROJECT ================= -->
+      <section
+        id="project"
+        class="section placeholder-section"
+        data-animate="section"
+      >
+        <div class="placeholder-section__inner">
+          <p class="eyebrow">SECTION 04 / 05 — PROJECT</p>
+          <h2 class="placeholder-section__title">Project</h2>
+          <div class="placeholder-section__rule" aria-hidden="true"></div>
+          <p class="placeholder-section__note">Selected work — in progress.</p>
+        </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/ascii-portrait.js"></script>
-<script src="js/navigation.js"></script>
-<script src="js/animations.js"></script>
-</body>
+        <!-- Reusable project-detail modal shell (hidden until wired to real data) -->
+        <div
+          class="project-modal"
+          id="projectModal"
+          data-open="false"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="projectModalTitle"
+          hidden
+        >
+          <div class="project-modal__backdrop" data-close-modal></div>
+          <div class="project-modal__panel" role="document">
+            <button
+              class="project-modal__close"
+              data-close-modal
+              aria-label="Close project details"
+            >
+              ×
+            </button>
+            <div
+              class="project-modal__image"
+              id="projectModalImage"
+              aria-hidden="true"
+            ></div>
+            <div class="project-modal__body">
+              <p class="eyebrow" id="projectModalEyebrow"></p>
+              <h3 class="project-modal__title" id="projectModalTitle"></h3>
+              <p class="project-modal__overview" id="projectModalOverview"></p>
+              <ul class="project-modal__stack" id="projectModalStack"></ul>
+              <p
+                class="project-modal__description"
+                id="projectModalDescription"
+              ></p>
+              <div class="project-modal__links" id="projectModalLinks"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+      <section
+        id="contact"
+        class="section placeholder-section placeholder-section--last"
+        data-animate="section"
+      >
+        <div class="placeholder-section__inner">
+          <p class="eyebrow">SECTION 05 / 05 — CONTACT</p>
+          <h2 class="placeholder-section__title">Contact</h2>
+          <div class="placeholder-section__rule" aria-hidden="true"></div>
+          <p class="placeholder-section__note">
+            Contact details &amp; social links — in progress.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Giast Ahmad</span>
+      <span class="footer__dim">Built with HTML, CSS, GSAP.</span>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/ascii-portrait.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+  </body>
 </html>
