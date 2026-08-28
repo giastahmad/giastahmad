@@ -1,0 +1,61 @@
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+/* Show decorative rails only when there's room for them */
+@media (min-width: 1180px) {
+  .rail { display: flex; }
+}
+
+/* Tablet */
+@media (max-width: 960px) {
+  .navbar__nav { display: none; }
+  .navbar__toggle { display: flex; }
+
+  .section { padding-left: 0; padding-right: 0; }
+  .footer { padding-left: var(--gutter); padding-right: var(--gutter); }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero__portrait-col { justify-content: center; }
+  .terminal-card { max-width: 380px; }
+  .hero__text-col { max-width: none; }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  :root { --nav-h: 64px; }
+
+  .navbar { padding: 0 18px; }
+  .navbar__mark-text { display: none; }
+
+  .hero { padding-top: calc(var(--nav-h) + 32px); align-items: flex-start; }
+  .hero__grid { padding: 0 20px; gap: 36px; }
+
+  .terminal-card { max-width: 100%; }
+  .terminal-card__body { padding: 14px 12px; }
+
+  .hero__name { font-size: clamp(40px, 13vw, 60px); }
+  .hero__caption { max-width: none; }
+  .hero__subcaption { max-width: none; }
+
+  .hero__scroll { margin-top: 40px; }
+
+  .placeholder-section__inner { padding: 64px 20px; }
+  .placeholder-section__title { font-size: clamp(30px, 10vw, 44px); }
+
+  .footer {
+    flex-direction: column;
+    gap: 6px;
+    padding: 24px 20px;
+  }
+
+  .project-modal__panel { padding: 24px; max-height: 92vh; }
+}
+
+/* Large desktop: give the composition more air */
+@media (min-width: 1600px) {
+  .hero__grid { max-width: 1520px; }
+}
