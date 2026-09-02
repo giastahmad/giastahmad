@@ -385,6 +385,51 @@ body {
 }
 
 /* =========================================================================
+   ABOUT — STATEMENT (particle-in text)
+   ========================================================================= */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.about-statement {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.about-statement__visual {
+  font-size: clamp(28px, 4.5vw, 100px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.about-statement__dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 23px;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: middle;
+  position: relative;
+}
+
+.particle-char {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+/* =========================================================================
    PLACEHOLDER SECTIONS (About / Journey / Project / Contact)
    ========================================================================= */
 

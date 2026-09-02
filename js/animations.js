@@ -4,6 +4,7 @@
  *   (prevents horizontal overflow at any viewport width)
  * - GSAP load-in timeline (navbar, portrait reveal, staggered hero text)
  * - GSAP ScrollTrigger reveals for later sections
+ * - About statement: particle-assembly text effect
  * - Fully respects prefers-reduced-motion
  */
 (function () {
@@ -60,4 +61,67 @@
       }
     );
   });
+
+  /* ---- About statement: particle assembly ----
+     Splits each phrase into per-character spans, scatters them randomly,
+     then converges them into place once the section scrolls into view.
+     Runs once. Text is left untouched entirely when reduced motion is
+     preferred (handled by the early return above). */
+  const statement = document.querySelector('.about-statement__visual');
+  if (statement) {
+    const phrases = statement.querySelectorAll('[data-particle]');
+    const dots = statement.querySelectorAll('[data-particle-dot]');
+    const chars = [];
+
+    phrases.forEach((phrase) => {
+      const text = phrase.textContent;
+      phrase.textContent = '';
+      [...text].forEach((ch) => {
+        if (ch === ' ') {
+          phrase.appendChild(document.createTextNode('\u00A0'));
+          return;
+        }
+        const span = document.createElement('span');
+        span.className = 'particle-char';
+        span.textContent = ch;
+        phrase.appendChild(span);
+        chars.push(span);
+      });
+    });
+
+    gsap.set(chars, {
+      opacity: 0,
+      x: () => gsap.utils.random(-50, 50),
+      y: () => gsap.utils.random(-36, 36),
+      rotate: () => gsap.utils.random(-20, 20),
+      scale: 0.4,
+      filter: 'blur(5px)',
+    });
+    gsap.set(dots, { scale: 0 });
+
+    ScrollTrigger.create({
+      trigger: statement,
+      start: 'top 78%',
+      once: true,
+      onEnter: () => {
+        const particleTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+        particleTl
+          .to(chars, {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            rotate: 0,
+            scale: 1,
+            filter: 'blur(0px)',
+            duration: 1.8,
+            stagger: { each: 0.014, from: 'random' },
+          })
+          .to(
+            dots,
+            { scale: 1, duration: 0.5, ease: 'back.out(3)', stagger: 0.08 },
+            '-=0.3'
+          );
+      },
+    });
+  }
 })();
