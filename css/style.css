@@ -288,7 +288,7 @@ body {
 
 .hero__grid {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: block;
   max-width: var(--max-w);
   margin: 0 auto;
