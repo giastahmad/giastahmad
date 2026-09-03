@@ -123,10 +123,10 @@ body {
   justify-content: space-between;
   padding: 0 var(--gutter);
   z-index: 200;
-  background: rgba(248, 247, 243, 0.86);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
+  background: rgba(248, 247, 243, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(7px);
 }
 
 .navbar__mark {
