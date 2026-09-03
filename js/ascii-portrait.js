@@ -335,9 +335,12 @@ const ASCII_ART_3 = `                                                           
     const pw = target.scrollWidth;
     const ph = target.scrollHeight;
     if (!pw || !ph) return;
-    const scale = Math.max(cw / pw, ch / ph) * 0.85;
+    const isMobile = window.innerWidth <= 640;
+    const coverFactor = isMobile ? 0.75 : 0.85;
+    const yOffset = isMobile ? 0.20 : 0.09;
+    const scale = Math.max(cw / pw, ch / ph) * coverFactor;
     const offsetX = Math.min(window.innerWidth * 0.10, 5090);
-    const offsetY = Math.min(window.innerHeight * 0.09, 2000);
+    const offsetY = Math.min(window.innerHeight * yOffset, 2000);
     target.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
   }
 
