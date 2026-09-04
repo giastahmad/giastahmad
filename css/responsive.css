@@ -49,6 +49,22 @@
 
   .hero__scroll { margin-top: 40px; }
 
+  .about-section {
+    min-height: 0;
+  }
+
+  .about-section .placeholder-section__inner {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .about-statement__dot {
+    width: clamp(8px, 2.5vw, 12px);
+    height: clamp(8px, 2.5vw, 12px);
+    margin-left: clamp(10px, 3vw, 18px);
+    margin-right: clamp(10px, 3vw, 18px);
+  }
+
   .placeholder-section__inner { padding: 64px 20px; }
   .placeholder-section__title { font-size: clamp(30px, 10vw, 44px); }
 
