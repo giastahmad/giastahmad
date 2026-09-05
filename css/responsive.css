@@ -36,7 +36,7 @@
     align-items: start;
     gap: 20px;
   }
-  .journey-stage__media { order: -1; max-width: 420px; margin: 30px auto; }
+  .journey-stage__media { order: -1; max-width: 420px; margin: 10px auto; }
   .journey-stage__list { max-width: none; }
 }
 
@@ -79,7 +79,8 @@
   .journey-head__title { font-size: clamp(26px, 7vw, 32px); }
   .journey-stage {
     padding: 14px 20px 12px;
-    gap: 14px;
+    gap: 8px;
+    align-content: start;
   }
   .journey-stage__title {
     font-size: clamp(24px, 7vw, 29px);
@@ -88,12 +89,32 @@
   }
   .journey-stage__period { margin-top: 6px; }
   .journey-stage__role { margin-top: 4px; }
-  .journey-stage__list { gap: 5px; margin-top: 12px; }
-  .journey-stage__list li { font-size: 13px; line-height: 1.4; min-height: 1.4em; }
-  .journey-stage__media { max-width: 100%; gap: 5px; }
+  .journey-stage__list {
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .journey-pin[data-mobile-layout="tags"] .journey-stage__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .journey-pin[data-mobile-layout="tags"] .journey-stage__list li {
+    padding: 5px 8px;
+    border: 1px solid var(--line-strong);
+    background: var(--accent-wash);
+    font-size: 10px;
+    line-height: 1.25;
+    min-height: 0;
+    overflow-wrap: anywhere;
+  }
+  .journey-pin[data-mobile-layout="tags"] .journey-stage__list li::before { display: none; }
+  .journey-stage__media { max-width: 100%; gap: 5px; margin: 10px auto 0; }
   .journey-carousel { aspect-ratio: 16 / 8.5; }
   .journey-nav-btn { width: 36px; height: 24px; }
   .journey-progress { padding: 0 20px 24px; }
+
+  @media (max-height: 720px) {
+    .journey-carousel { aspect-ratio: 16 / 6; }
+  }
 
   .footer {
     flex-direction: column;

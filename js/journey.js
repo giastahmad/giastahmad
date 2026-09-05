@@ -41,8 +41,8 @@
       title: 'Danone Indonesia',
       role: 'Finance Automation',
       bullets: [
-        'VBA x SAP GUI scripting',
-        'SO release: 4h → 25min',
+        'VBA-powered SAP workflow automation',
+        'SO Release: manual to automated',
         'I2C dashboards, rebuilt for trust',
       ],
       images: [
@@ -85,6 +85,23 @@
   const prevBtn = document.querySelector('[data-carousel-prev]');
   const nextBtn = document.querySelector('[data-carousel-next]');
   if (!pin || !titleEl) return;
+
+  const listEl = document.querySelector('.journey-stage__list');
+  const progressEl = document.querySelector('.journey-progress');
+
+  function updateMobileLayout() {
+    if (!listEl || !progressEl) return;
+    if (window.innerWidth > 960) {
+      pin.removeAttribute('data-mobile-layout');
+      return;
+    }
+
+    pin.removeAttribute('data-mobile-layout');
+    const listRect = listEl.getBoundingClientRect();
+    const progressRect = progressEl.getBoundingClientRect();
+    const hasClippingRisk = listRect.bottom > progressRect.top - 4;
+    if (hasClippingRisk) pin.setAttribute('data-mobile-layout', 'tags');
+  }
 
   function hash(a, b) {
     const x = Math.sin(a * 12.9898 + b * 78.233) * 43758.5453;
@@ -253,6 +270,7 @@
   }
 
   render(0); // initial paint before any scroll
+  updateMobileLayout();
 
   const st = ScrollTrigger.create({
     trigger: pin,
@@ -264,5 +282,12 @@
     onUpdate: (self) => render(self.progress),
   });
 
-  window.addEventListener('load', () => ScrollTrigger.refresh());
+  window.addEventListener('load', () => {
+    updateMobileLayout();
+    ScrollTrigger.refresh();
+  });
+  window.addEventListener('resize', () => {
+    updateMobileLayout();
+    ScrollTrigger.refresh();
+  });
 })();
