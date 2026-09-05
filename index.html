@@ -218,18 +218,56 @@
       </section>
 
       <!-- ================= JOURNEY ================= -->
-      <section
-        id="journey"
-        class="section placeholder-section"
-        data-animate="section"
-      >
-        <div class="placeholder-section__inner">
-          <p class="eyebrow">SECTION 03 / 05 — JOURNEY</p>
-          <h2 class="placeholder-section__title">Journey</h2>
-          <div class="placeholder-section__rule" aria-hidden="true"></div>
-          <p class="placeholder-section__note">
-            Education &amp; experience timeline — in progress.
-          </p>
+      <section id="journey" class="section journey-section" aria-label="Journey">
+        <div class="journey-pin">
+          <div class="journey-head">
+            <h2 class="journey-head__title">Journey</h2>
+            <div class="journey-head__rule" aria-hidden="true"></div>
+          </div>
+
+          <div class="journey-stage">
+            <div class="journey-stage__info">
+              <span class="journey-stage__index" data-stage="index">01 / 04</span>
+              <p class="journey-stage__period" data-stage="period">Apr 2023 — Feb 2024</p>
+              <h3 class="journey-stage__title" data-stage="title">BEM FMIPA Unpad</h3>
+              <p class="journey-stage__role" data-stage="role">Internal Relations</p>
+              <ul class="journey-stage__list">
+                <li data-stage="bullet0">80+ voices aligned</li>
+                <li data-stage="bullet1">Safari MIPA, shipped</li>
+                <li data-stage="bullet2">Feedback loop, closed</li>
+              </ul>
+            </div>
+            <div class="journey-stage__media">
+              <button
+                class="journey-nav-btn journey-nav-btn--up"
+                data-carousel-prev
+                aria-label="Previous photo"
+              >
+                &#9650;
+              </button>
+              <div class="journey-carousel" data-carousel>
+                <img class="journey-carousel__img" data-carousel-img src="" alt="" />
+                <span class="journey-carousel__count" data-carousel-count></span>
+              </div>
+              <button
+                class="journey-nav-btn journey-nav-btn--down"
+                data-carousel-next
+                aria-label="Next photo"
+              >
+                &#9660;
+              </button>
+            </div>
+          </div>
+
+          <div class="journey-progress" aria-hidden="true">
+            <span class="journey-progress__dot" data-dot></span>
+            <span class="journey-progress__dot" data-dot></span>
+            <span class="journey-progress__dot" data-dot></span>
+            <span class="journey-progress__dot" data-dot></span>
+            <span class="journey-progress__bar"
+              ><span class="journey-progress__fill" data-fill></span
+            ></span>
+          </div>
         </div>
       </section>
 
@@ -313,5 +351,6 @@
     <script src="js/main.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/journey.js"></script>
   </body>
 </html>
