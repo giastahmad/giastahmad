@@ -272,10 +272,13 @@
   render(0); // initial paint before any scroll
   updateMobileLayout();
 
+  let lastLayoutWidth = window.innerWidth;
+  let resizeTimer = null;
+
   const st = ScrollTrigger.create({
     trigger: pin,
     start: 'top top',
-    end: () => '+=' + window.innerHeight * totalWeight,
+    end: () => '+=' + pin.offsetHeight * totalWeight,
     pin: true,
     scrub: 0.4,
     anticipatePin: 1,
@@ -288,6 +291,12 @@
   });
   window.addEventListener('resize', () => {
     updateMobileLayout();
-    ScrollTrigger.refresh();
+    if (window.innerWidth === lastLayoutWidth) return;
+
+    lastLayoutWidth = window.innerWidth;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
   });
 })();
