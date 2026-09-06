@@ -62,11 +62,7 @@
     );
   });
 
-  /* ---- About statement: particle assembly ----
-     Splits each phrase into per-character spans, scatters them randomly,
-     then converges them into place once the section scrolls into view.
-     Runs once. Text is left untouched entirely when reduced motion is
-     preferred (handled by the early return above). */
+  
   const statement = document.querySelector('.about-statement__visual');
   if (statement) {
     const phrases = statement.querySelectorAll('[data-particle]');
@@ -121,6 +117,19 @@
             { scale: 1, duration: 0.5, ease: 'back.out(3)', stagger: 0.08 },
             '-=0.3'
           );
+      },
+    });
+  }
+
+  const certsSection = document.querySelector('.certs');
+  if (certsSection) {
+    gsap.set(certsSection, { y: 32 });
+    ScrollTrigger.create({
+      trigger: certsSection,
+      start: 'top 82%',
+      once: true,
+      onEnter: () => {
+        gsap.to(certsSection, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
       },
     });
   }

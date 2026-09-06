@@ -72,6 +72,17 @@
     margin-right: clamp(10px, 3vw, 18px);
   }
 
+  .tech-stack { margin-top: 48px; }
+  .tech-stack__rows { margin-top: 24px; gap: 20px; }
+  .tech-marquee__item { width: 92px; margin: 0 18px; }
+  .tech-marquee__item img { width: 44px; height: 44px; }
+  .tech-marquee__label { font-size: 10px; }
+
+  .certs { margin-top: 52px; }
+  .certs-carousel { margin-top: 28px; gap: 10px; }
+  .certs-carousel__slide { margin: 0 8px; }
+  .certs-lightbox__close { top: 14px; right: 14px; width: 34px; height: 34px; font-size: 22px; }
+
   .placeholder-section__inner { padding: 64px 20px; }
   .placeholder-section__title { font-size: clamp(30px, 10vw, 44px); }
 
