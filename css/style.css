@@ -1103,6 +1103,28 @@ body {
   transform: translateX(4px);
 }
 
+.project-more-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 28px auto 0;
+  padding: 13px 24px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-raised);
+  color: var(--ink);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.project-more-btn:hover,
+.project-more-btn:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.project-more-btn__icon { width: 14px; height: 14px; }
+
 /* =========================================================================
    PROJECT MODAL
    ========================================================================= */

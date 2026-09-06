@@ -245,6 +245,29 @@
     });
     catalog.appendChild(frag);
 
+    const moreBtn = document.createElement('button');
+    moreBtn.type = 'button';
+    moreBtn.className = 'project-more-btn';
+    moreBtn.id = 'projectSeeAll';
+    moreBtn.innerHTML =
+      '<span>See All Projects</span>' +
+      '<svg class="project-more-btn__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5l5 5 5-5"/></svg>';
+    moreBtn.addEventListener('click', () => {
+      catalog.setAttribute('data-expanded', 'true');
+      moreBtn.remove();
+      if (typeof gsap !== 'undefined') {
+        gsap.to(catalog.querySelectorAll('.project-card'), {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power3.out',
+          stagger: 0.05,
+        });
+      }
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+    });
+    catalog.insertAdjacentElement('afterend', moreBtn);
+
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const cards = catalog.querySelectorAll('.project-card');

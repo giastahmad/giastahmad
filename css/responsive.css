@@ -149,6 +149,13 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  .project-catalog:not([data-expanded="true"]) .project-card:nth-child(n+3) {
+    display: none;
+  }
+  .project-more-btn {
+    display: flex;
+    width: 100%;
+  }
   .project-card__body { padding: 18px 18px 20px; gap: 8px; }
   .project-card__title { font-size: 18px; }
   .project-card__summary { font-size: 12.5px; }
