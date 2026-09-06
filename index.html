@@ -400,53 +400,23 @@
       <!-- ================= PROJECT ================= -->
       <section
         id="project"
-        class="section placeholder-section"
+        class="section placeholder-section project-section"
         data-animate="section"
       >
-        <div class="placeholder-section__inner">
-          <p class="eyebrow">SECTION 04 / 05 — PROJECT</p>
-          <h2 class="placeholder-section__title">Project</h2>
-          <div class="placeholder-section__rule" aria-hidden="true"></div>
-          <p class="placeholder-section__note">Selected work — in progress.</p>
+        <div class="placeholder-section__inner project-section__inner">
+          <div class="project-head">
+            <p class="eyebrow">SECTION 04 / 05 — PROJECT</p>
+            <h2 class="project-head__title">Project(s)</h2>
+            <div class="placeholder-section__rule" aria-hidden="true"></div>
+            <p class="project-head__note">
+              Selected work — <span data-project-count>09</span> systems shipped, from ETL pipelines
+              and ML-driven forecasting to full-stack platforms.
+            </p>
+          </div>
+
+          <div class="project-catalog" id="projectCatalog" data-project-catalog></div>
         </div>
 
-        <!-- Reusable project-detail modal shell -->
-        <div
-          class="project-modal"
-          id="projectModal"
-          data-open="false"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="projectModalTitle"
-          hidden
-        >
-          <div class="project-modal__backdrop" data-close-modal></div>
-          <div class="project-modal__panel" role="document">
-            <button
-              class="project-modal__close"
-              data-close-modal
-              aria-label="Close project details"
-            >
-              ×
-            </button>
-            <div
-              class="project-modal__image"
-              id="projectModalImage"
-              aria-hidden="true"
-            ></div>
-            <div class="project-modal__body">
-              <p class="eyebrow" id="projectModalEyebrow"></p>
-              <h3 class="project-modal__title" id="projectModalTitle"></h3>
-              <p class="project-modal__overview" id="projectModalOverview"></p>
-              <ul class="project-modal__stack" id="projectModalStack"></ul>
-              <p
-                class="project-modal__description"
-                id="projectModalDescription"
-              ></p>
-              <div class="project-modal__links" id="projectModalLinks"></div>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- ================= CONTACT ================= -->
@@ -465,6 +435,72 @@
         </div>
       </section>
     </main>
+
+    <!-- Reusable project-detail modal shell (kept outside <main> so its
+         fixed positioning is relative to the viewport, not to any
+         animated/will-change ancestor inside the page sections) -->
+    <div
+      class="project-modal"
+      id="projectModal"
+      data-open="false"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="projectModalTitle"
+      hidden
+    >
+      <div class="project-modal__backdrop" data-close-modal></div>
+      <div class="project-modal__panel" role="document">
+        <button
+          class="project-modal__close"
+          data-close-modal
+          aria-label="Close project details"
+        >
+          ×
+        </button>
+        <div
+          class="project-modal__image"
+          id="projectModalImage"
+        >
+          <img
+            class="project-modal__image-img"
+            id="projectModalImageImg"
+            src=""
+            alt=""
+            data-loaded="false"
+          />
+          <button
+            class="journey-nav-btn project-modal__image-nav project-modal__image-nav--prev"
+            id="projectModalImagePrev"
+            aria-label="Previous image"
+          >
+            &#9664;
+          </button>
+          <button
+            class="journey-nav-btn project-modal__image-nav project-modal__image-nav--next"
+            id="projectModalImageNext"
+            aria-label="Next image"
+          >
+            &#9654;
+          </button>
+          <span
+            class="project-modal__image-count"
+            id="projectModalImageCount"
+          ></span>
+        </div>
+        <div class="project-modal__body">
+          <p class="eyebrow" id="projectModalEyebrow"></p>
+          <h3 class="project-modal__title" id="projectModalTitle"></h3>
+          <p class="project-modal__meta" id="projectModalMeta"></p>
+          <p class="project-modal__overview" id="projectModalOverview"></p>
+          <ul class="project-modal__stack" id="projectModalStack"></ul>
+          <p
+            class="project-modal__description"
+            id="projectModalDescription"
+          ></p>
+          <div class="project-modal__links" id="projectModalLinks"></div>
+        </div>
+      </div>
+    </div>
 
     <div class="certs-lightbox" id="certsLightbox" data-open="false" role="dialog" aria-modal="true" hidden>
       <div class="certs-lightbox__backdrop" data-certs-lightbox-close></div>
@@ -485,5 +521,6 @@
     <script src="js/animations.js"></script>
     <script src="js/journey.js"></script>
     <script src="js/certs.js"></script>
+    <script src="js/projects.js"></script>
   </body>
 </html>
