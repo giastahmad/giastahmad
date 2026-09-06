@@ -122,8 +122,9 @@
       void track.offsetHeight;
     }
 
+    const activeCert = current % N;
     [...track.children].forEach((slide, k) => {
-      slide.classList.toggle("is-active", k === current);
+      slide.classList.toggle("is-active", k % N === activeCert);
     });
 
     const cert = CERTS[current % N];

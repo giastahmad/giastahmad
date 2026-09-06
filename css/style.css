@@ -283,6 +283,7 @@ body {
   position: relative;
   overflow: hidden;
   padding-top: calc(var(--nav-h) + 148px);
+  border-bottom: 1px solid var(--line);
 }
 
 .hero__ascii-layer {
@@ -678,7 +679,6 @@ body {
   min-height: 70svh;
   display: flex;
   align-items: center;
-  border-top: 1px solid var(--line);
 }
 .placeholder-section--last { min-height: 60svh; }
 
@@ -712,7 +712,6 @@ body {
 .journey-section {
   padding-left: 0;
   padding-right: 0;
-  border-top: 1px solid var(--line);
 }
 
 .journey-pin {
