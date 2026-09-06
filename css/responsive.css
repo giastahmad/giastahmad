@@ -163,6 +163,14 @@
   .project-modal__overview,
   .project-modal__description { font-size: 13.5px; }
   .project-modal__links { gap: 12px 20px; }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+    gap: 12px;
+  }
+  .contact-tag { padding: 16px 18px; }
+  .contact-tag__value { font-size: 12.5px; }
 }
 
 /* Large desktop: give the composition more air */
