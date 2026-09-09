@@ -8,14 +8,15 @@
   --bg:            #F8F7F3;
   --bg-raised:     #F2F0E9;
   --ink:           #17150F;
-  --ink-dim:       #6F6B60;
-  --ink-faint:     #B4AF9F;
+  --ink-dim:       #57534A;
+  --ink-faint:     #867F6C;
   --accent:        #800020;
+  --accent-hover:  #660019;
   --accent-ink:    #F8F7F3;
   --accent-wash:   rgba(128, 0, 32, 0.06);
   --accent-wash-2: rgba(128, 0, 32, 0.12);
-  --line:          #DCD7C9;
-  --line-strong:   #C7C1AF;
+  --line:          #D2CBB9;
+  --line-strong:   #8C8268;
 
   /* ---- Type ---- */
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
@@ -134,7 +135,7 @@ body {
   padding: 0 var(--gutter);
   z-index: 200;
   border-bottom: 1px solid var(--line);
-  background: rgba(248, 247, 243, 0.15);
+  background: rgba(248, 247, 243, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(7px);
 }
@@ -621,6 +622,12 @@ body {
   text-transform: uppercase;
   color: var(--accent);
   border-bottom: 1px solid var(--accent);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.certs-info__link:hover,
+.certs-info__link:focus-visible {
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 /* ---- Lightbox ---- */
@@ -1297,7 +1304,8 @@ body {
 .project-modal__links a svg { flex-shrink: 0; }
 .project-modal__links a:hover,
 .project-modal__links a:focus-visible {
-  background: var(--accent);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
   color: var(--accent-ink);
 }
 
